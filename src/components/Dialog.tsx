@@ -3,7 +3,6 @@ import Image from "next/image";
 import React, { useState } from "react";
 import showcase2_display from "../assets/showcase2_display.jpg";
 import showcase1_display from "../assets/showcase1_display.png";
-import showcase1_info from "../assets/showcase1_info.png";
 import { ArrowDown, ArrowUp } from "lucide-react";
 import ImageCard from "./ImageCard";
 import ImageCardLinks from "./ImageCardLinks";
@@ -43,6 +42,20 @@ const Dialog = () => {
       description:
         "Nexit is a full stack web application that was made to make the chatting more interactive and fun loving process.",
     },
+    {
+      category: "FULL STACK APPLICATION",
+      title: "NEXIT",
+      description:
+        "Nexit is a full stack web application that was made to make the chatting more interactive and fun loving process.",
+      github: "https://github.com/bottercode/nexit",
+      deploy: "https://nexit-gamma.vercel.app/",
+    },
+    {
+      category: "FULL STACK APPLICATION",
+      title: "QUEELER",
+      description:
+        "Nexit is a full stack web application that was made to make the chatting more interactive and fun loving process.",
+    },
   ];
 
   const currentImageIndex = Math.min(num - 1, imageSources.length - 1);
@@ -68,21 +81,21 @@ const Dialog = () => {
           src={imageSources[currentImageIndex]}
           alt={`showcase${currentImageIndex + 1}_display`}
           quality={100}
-          className="w-[70%] h-[72%] absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 rounded-sm max-sm:aspect-square max-md:aspect-square"
+          className="w-[70%] h-[72.5%] absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 max-sm:aspect-square max-md:aspect-square"
         />
         <ImageCard
-          category={imageCardContent[currentImageIndex].category}
-          title={imageCardContent[currentImageIndex].title}
-          description={imageCardContent[currentImageIndex].description}
-          github={imageCardContent[currentImageIndex].github}
-          deploy={imageCardContent[currentImageIndex].deploy}
+          category={imageCardContent[currentImageIndex]?.category}
+          title={imageCardContent[currentImageIndex]?.title}
+          description={imageCardContent[currentImageIndex]?.description}
+          github={imageCardContent[currentImageIndex]?.github}
+          deploy={imageCardContent[currentImageIndex]?.deploy}
         />
 
         <ImageCardLinks />
         <div className="absolute flex items-center flex-col left-[85%] p-7 gap-11 z-10 ml-40 max-sm:p-3 max-sm:ml-16 max-sm:text-[10px] max-sm:top-4 max-md:p-10 max-md:ml-16 max-md:top-4 ">
           <p className="text-white">LIST</p>
           <ArrowUp
-            className="text-white"
+            className="text-white hover:text-[#CE8264]"
             onClick={() => handleButtonClick("up")}
           />
           {pages.map((pg, i) => (
@@ -95,7 +108,7 @@ const Dialog = () => {
             </button>
           ))}
           <ArrowDown
-            className="text-white "
+            className="text-white hover:text-[#CE8264]"
             onClick={() => handleButtonClick("down")}
           />
         </div>
