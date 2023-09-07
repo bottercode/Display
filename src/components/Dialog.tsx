@@ -1,17 +1,19 @@
 "use client";
 import Image from "next/image";
 import React, { useState } from "react";
-import showcase2_display from "../assets/showcase2_display.jpg";
 import showcase1_display from "../assets/showcase1_display.png";
+import showcase2_display from "../assets/showcase2_display.png";
+import showcase3_display from "../assets/showcase3_display.png";
 import { ArrowDown, ArrowUp } from "lucide-react";
 import ImageCard from "./ImageCard";
 import ImageCardLinks from "./ImageCardLinks";
+import Link from "next/link";
 const Dialog = () => {
   const [num, setNum] = useState(1);
   const imageSources = [
     showcase1_display,
     showcase2_display,
-    showcase1_display,
+    showcase3_display,
     showcase2_display,
   ];
   const totalImages = imageSources.length;
@@ -30,31 +32,43 @@ const Dialog = () => {
   const imageCardContent = [
     {
       category: "FULL STACK APPLICATION",
+      type: "Personal Project",
+      name: "NEXIT",
       title: "NEXIT",
       description:
-        "Nexit is a full stack web application that was made to make the chatting more interactive and fun loving process.",
+        "Nexit is a full stack web application having communities where you can connect with like minded people and do all the fun stuffs.",
       github: "https://github.com/bottercode/nexit",
       deploy: "https://nexit-gamma.vercel.app/",
     },
     {
-      category: "FULL STACK APPLICATION",
-      title: "QUEELER",
+      category: "FRONTEND DESIGN",
+      title: "POD",
+      name: "POD",
+      type: "Personal Project",
       description:
-        "Nexit is a full stack web application that was made to make the chatting more interactive and fun loving process.",
+        "POD is just a frontend design depicting a landing design for a podcast application. More responsive can be made on demand applicable for 2xl and bigger screens.",
+      github: "https://github.com/bottercode/podcast",
+      deploy: "https://podcast-design.vercel.app/",
     },
     {
       category: "FULL STACK APPLICATION",
-      title: "NEXIT",
+      title: "AI ANALYSIS PREDICTION",
+      name: "PREDICTION",
+      type: "Freelance Project",
       description:
-        "Nexit is a full stack web application that was made to make the chatting more interactive and fun loving process.",
-      github: "https://github.com/bottercode/nexit",
-      deploy: "https://nexit-gamma.vercel.app/",
+        "Ai Analysis Prediction is a full stack web application consisting of display charts thats fetches live data from the apis handled in the backend.",
+      github: "https://github.com/bottercode/stockworld-AIPrediction",
+      deploy: "https://stockworld-ai-prediction.vercel.app/",
     },
     {
       category: "FULL STACK APPLICATION",
       title: "QUEELER",
+      name: "QUEELER",
+      type: "Personal Project",
       description:
         "Nexit is a full stack web application that was made to make the chatting more interactive and fun loving process.",
+      github: "https://github.com/bottercode/stockworld-AIPrediction",
+      deploy: "https://stockworld-ai-prediction.vercel.app/",
     },
   ];
 
@@ -64,18 +78,22 @@ const Dialog = () => {
     <div className="absolute w-[60%]  h-[80%] top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">
       <div className="w-full h-full relative">
         <div className="absolute flex gap-20 p-7 z-10">
-          <p className="text-white max-sm:text-[10px] ">ABOUT</p>
-          <p className="text-white max-sm:text-[10px]">PROJECTS</p>
+          <p className="text-white max-sm:text-[10px] ">
+            <Link href="/about">ABOUT</Link>
+          </p>
+          <p className="text-white max-sm:text-[10px]">
+            <Link href="/#">PROJECTS</Link>
+          </p>
         </div>
 
-        <h1 className="text-gray-500 tracking-[.1rem] font-extrabold text-[90px] rotate-90 -translate-x-[40%] translate-y-[130%] opacity-60 absolute left-0 top-40 z-1 max-sm:text-6xl max-sm:-translate-x-[70%] max-md:-translate-x-[65%] max-md:translate-y-full max-lg:-translate-x-[65%] max-lg:translate-y-[8%] max-2xl:translate-y-[30%]">
-          HENCE
+        <h1 className="text-gray-500 tracking-[.1rem] font-extrabold text-[90px] -rotate-90 -translate-x-[40%] translate-y-[130%] opacity-60 absolute left-0 top-40 z-1 max-sm:text-6xl max-sm:-translate-x-[70%] max-md:-translate-x-[65%] max-md:translate-y-full max-lg:-translate-x-[65%] max-lg:translate-y-[8%] max-2xl:translate-y-[30%]">
+          {imageCardContent[currentImageIndex]?.name}
         </h1>
         <p className="text-[#e18f69] font-semibold -rotate-90 text-xl -translate-x-[30%] max-sm:text-[15px] max-sm:-translate-x-[90%] max-md:text-[15px] max-md:-translate-x-[120%] absolute left-0 top-1/2 z-2 max-lg:-translate-x-[80%]">
           Devansh Dwivedi
         </p>
         <span className="text-[#e18f69] font-semibold -rotate-90  text-sm absolute left-2 top-1/2 z-2 max-sm:text-[10px] max-sm:-translate-x-[120%] max-md:text-[10px] max-md:-translate-x-[160%] max-lg:-translate-x-[80%]">
-          Personal Project
+          {imageCardContent[currentImageIndex]?.type}
         </span>
         <Image
           src={imageSources[currentImageIndex]}
