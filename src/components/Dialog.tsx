@@ -86,7 +86,7 @@ const Dialog = () => {
           </p>
         </div>
 
-        <h1 className="text-gray-500 tracking-[.1rem] font-extrabold text-[90px] -rotate-90 -translate-x-[40%] translate-y-[130%] opacity-60 absolute left-0 top-40 z-1 max-sm:text-6xl max-sm:-translate-x-[70%] max-md:-translate-x-[65%] max-md:translate-y-full max-lg:-translate-x-[65%] max-lg:translate-y-[8%] max-2xl:translate-y-[30%]">
+        <h1 className="text-gray-500 text-6xl tracking-[.1rem] font-extrabold text-[90px] -rotate-90 -translate-x-[40%] translate-y-[330%] opacity-60 absolute left-0 top-40 z-1 max-sm:text-6xl max-sm:-translate-x-[70%] max-md:-translate-x-[65%] max-md:translate-y-full max-lg:-translate-x-[65%] max-lg:translate-y-[8%] max-2xl:translate-y-[100%]">
           {imageCardContent[currentImageIndex]?.name}
         </h1>
         <p className="text-[#e18f69] font-semibold -rotate-90 text-xl -translate-x-[30%] max-sm:text-[15px] max-sm:-translate-x-[90%] max-md:text-[15px] max-md:-translate-x-[120%] absolute left-0 top-1/2 z-2 max-lg:-translate-x-[80%]">

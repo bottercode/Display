@@ -13,7 +13,7 @@ const ImageCard = ({ category, title, description, github, deploy }: any) => {
           {title}
         </h1>
         <hr className="w-14 h-2 my-4 bg-black border-0 ml-1 max-sm:my-5 max-sm:w-5 max-md:my-10"></hr>
-        <p className="text-3xl max-sm:text-[8px] max-sm:tracking-tighter max-md:text-[20px] max-lg:text-[13px] max-2xl:text-[15px]">
+        <p className="text-3xl max-sm:text-[8px] max-sm:tracking-tighter max-md:text-[20px] max-lg:text-[13px] max-2xl:text-[12px]">
           {description}
         </p>
         <div className="flex fixed bottom-6 gap-4 max-2xl:bottom-3">
